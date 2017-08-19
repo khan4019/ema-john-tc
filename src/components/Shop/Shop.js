@@ -3,7 +3,7 @@ import './Shop.css';
 import fakeData from '../../fakeData';
 
 import ShopItem from '../ShopItem/ShopItem';
-
+import Cart from '../Cart/Cart';
 class Shop extends Component {
     constructor(){
         super();
@@ -43,7 +43,7 @@ class Shop extends Component {
                         }
                     </div>
                     <div className="cart-container">
-                        here is cart
+                        <Cart cart={this.state.cart}></Cart>
                     </div>
                 </div>
             </div>
