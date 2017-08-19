@@ -7,7 +7,6 @@ class Cart extends Component {
     }
 
     calculatePrice(){
-        console.log(this.props);
         this.totalPrice = 1000
     }
     render() {

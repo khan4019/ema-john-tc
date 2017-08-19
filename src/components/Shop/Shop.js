@@ -4,12 +4,15 @@ import fakeData from '../../fakeData';
 
 import ShopItem from '../ShopItem/ShopItem';
 import Cart from '../Cart/Cart';
+import {addToDatabaseCart} from '../../utilities/databaseManager';
+
 class Shop extends Component {
     constructor(){
         super();
         this.state = {
             items: [],
-            cart: []
+            cart: [],
+            cartCount:{}
         }
         this.addToCart = this.addToCart.bind(this);
     }
@@ -26,6 +29,17 @@ class Shop extends Component {
         this.setState({
             cart: newCart
         })
+
+        var newCartCount = Object.assign({}, this.state.cartCount);
+        var previousCount = newCartCount[id] || 0;
+        var newCount = previousCount + 1;
+        newCartCount[id] = newCount;
+
+        this.setState({
+            cartCount: newCartCount
+        })
+
+        addToDatabaseCart(id, newCount);
     }
     
     render() {
