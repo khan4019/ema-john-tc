@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Rating from 'react-rating';
 import './ShopItem.css';
+
+import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 
 class ShopItem extends Component {
     render() {
@@ -19,6 +22,14 @@ class ShopItem extends Component {
                             <button>add to cart</button>
                         </div>
                         <div>
+                            <Rating
+                               className="ratings"
+                               empty="fa fa-star-o"
+                               full="fa fa-star"
+                               placeholder="fa fa-star"
+                               placeholderRate={item.star}
+                               readonly
+                            />
                         </div>        
                     </div>
                 </div>

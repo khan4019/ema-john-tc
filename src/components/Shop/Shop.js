@@ -25,7 +25,7 @@ class Shop extends Component {
                     <div className="items-container">
                         {
                             this.state.items
-                            .map(item =><ShopItem item={item}></ShopItem>)
+                            .map(item =><ShopItem key={item.id} item={item}></ShopItem>)
                         }
                     </div>
                     <div className="cart-container">
